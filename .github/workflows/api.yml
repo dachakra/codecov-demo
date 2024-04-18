@@ -1,6 +1,9 @@
 name: API workflow
 
-on: [push, pull_request]
+on:
+  push:
+    paths:
+      - 'api/**'
 
 jobs:
   build:
@@ -21,3 +24,4 @@ jobs:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
       with:
         flags: backend
+        
